@@ -60,13 +60,13 @@ class ScannerControlAPP(QtWidgets.QMainWindow, VideoCapture.Ui_CaptureBoard):
     def runcapture(self, productname):
         if self.checkBox_0.isChecked():
             self.writeLog1("Camera [0] Start")
-            process0 = subprocess.Popen("python CameraCapture.py {} 0 1".format(productname))
+            process0 = subprocess.Popen("python grab_2camera.py scan 0 {} 1".format(productname))
         if self.checkBox_1.isChecked():
             self.writeLog1("Camera [1] Start")
-            process1 = subprocess.Popen("python CameraCapture.py {} 1 1".format(productname))
+            process1 = subprocess.Popen("python grab_2camera.py scan 1 {} 1 1".format(productname))
         if self.checkBox_2.isChecked():
             self.writeLog1("Camera [2] Start")
-            process2 = subprocess.Popen("python CameraCapture.py {} 2 1".format(productname))
+            process2 = subprocess.Popen("python grab_2camera.py scan 2 {} 2 1".format(productname))
 
     def btnCapture(self):
         print(sys.argv)
